@@ -1,0 +1,73 @@
+<!doctype html>
+	    <html lang="en">
+    <head>
+	    <meta charset="utf-8">
+	    <title>Portfolio</title>
+	    <link rel="stylesheet" href="style.css">
+	    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Monoton|Quicksand" rel="stylesheet">
+	    </head>
+    <body>
+       <header class="header">
+      <p>Bryan Sperry</p>
+    </header>
+      <ul id="menuprimary" style="position: sticky; top: 0;  z-index: 1">
+    <li><a href="index.html">home</a></li>
+    <li><a href="portfolio.html">portfolio</a></li>
+    <li><a href="aboutme.html">about me</a></li>
+    </ul>
+        <h1 class="title">my portfolio</h1>
+        <a target="_blank" href="https://scratch.mit.edu/projects/285271261/">
+        <img src="images/scratchlogo.png" height="100">
+        </a>
+        <br>
+        <p>This is a Scratch Game I made called food fight</p>
+        <br>
+        <img src="images/GAMESCREEN.PNG" height="400">
+        <img src="images/GAMEBLOCKS.PNG" height="400">
+        <br>
+        <p>We made a Sudoku game in MIT App Inventor. There are two levels of different difficulties and an Instructions screen. The app uses touchscreen technology to work.</p>
+        <br>
+        <a target="_blank" href="https://repl.it/@sperrybryan/Interactive-Fiction1">
+        <img src="images/seahorsekangaroo.png" height="250">
+        </a>
+        <br>
+        <p>Try our Interactive fiction made using Python! It's a story about a seahorse and a kangaroo based on the voyage and return plot. Try to survive till the happy ending!</p>
+	    </body>
+	    <script>
+     ;(function (window, document, undefined) {
+	'use strict';
+	if (!('localStorage' in window)) return;
+	var nightMode = localStorage.getItem('gmtNightMode');
+	if (nightMode) {
+		document.documentElement.className += 'nightmode';
+	}
+})(window, document);
+
+
+;(function (window, document, undefined) {
+
+	'use strict';
+
+	if (!('localStorage' in window)) return;
+
+	var nav = document.querySelector('#menuprimary');
+	if (!nav) return;
+
+	nav.innerHTML += '<li style="float:right!important" id="nightmode"><a role="button" href="#">toggle night mode</a></li>';
+
+	var nightMode = document.querySelector('#nightmode');
+	if (!nightMode) return;
+
+	nightMode.addEventListener('click', function (event) {
+		event.preventDefault();
+		document.documentElement.classList.toggle('nightmode');
+		if ( document.documentElement.classList.contains('nightmode') ) {
+			localStorage.setItem('gmtNightMode', true);
+			return;
+		}
+		localStorage.removeItem('gmtNightMode');
+	}, false);
+
+})(window, document);
+    </script>
+</html>
